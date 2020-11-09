@@ -1,0 +1,7 @@
+{
+   "name": "User Lookup",
+   "description": "Look up information about the user using their ID.",
+   "author": "eternal",
+   "version": "1.0.4",
+   "license": "Unlicensed"
+}
