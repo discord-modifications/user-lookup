@@ -5,9 +5,9 @@ A powercord plugin to look up information about the user using their ID.
 - Powercord
 
 # Usage 
-- `-whois [id]`
-- `-lookup [id]`
-- `-id [id]`
+- `whois [id]`
+- `lookup [id]`
+- `id [id]`
 
 # Installation
 - `git clone https://github.com/slow/user-lookup`
