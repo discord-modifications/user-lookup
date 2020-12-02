@@ -13,4 +13,4 @@ A powercord plugin to look up information about the user using their ID.
 - `git clone https://github.com/slow/user-lookup`
 
 # Support
-- eternal#1000
+- eternal#0404
