@@ -11,7 +11,7 @@ module.exports = class UserLookup extends Plugin {
          usage: '{c} <id>',
          description: 'Lookup user info from a user id',
          executor: this.getInfo
-      })
+      });
    }
 
    async getInfo(id) {
@@ -23,13 +23,13 @@ module.exports = class UserLookup extends Plugin {
          if (!user.avatar) {
             avatar = `https://canary.discord.com${user.avatarURL}`;
          } else {
-            avatar = `https://cdn.discordapp.com/avatars/${String(user.id)}/${user.avatar}.${user.avatar.startsWith('a_') ? 'gif' : 'png'}?size=4096`
+            avatar = `https://cdn.discordapp.com/avatars/${String(user.id)}/${user.avatar}.${user.avatar.startsWith('a_') ? 'gif' : 'png'}?size=4096`;
          }
 
          let unix = (id / 4194304) + 1420070400000;
          let time = new Date(unix);
          let date = `${time.getMonth() + 1}/${time.getDate()}/${time.getFullYear()} `;
-         let difference = UserLookup.differentiate(Date.now(), unix)
+         let difference = UserLookup.differentiate(Date.now(), unix);
 
          return {
             result: {
@@ -46,12 +46,12 @@ module.exports = class UserLookup extends Plugin {
                ]
             },
             embed: true
-         }
+         };
       } catch (err) {
-         console.log(err)
+         console.log(err);
          return {
             result: 'Invalid ID.'
-         }
+         };
       }
    }
 
@@ -67,17 +67,17 @@ module.exports = class UserLookup extends Plugin {
       var msPerYear = msPerDay * 365;
       var elapsed = current - previous;
       if (elapsed < msPerMinute) {
-         return `${Math.round(elapsed / 1000)} seconds ago`
+         return `${Math.round(elapsed / 1000)} seconds ago`;
       } else if (elapsed < msPerHour) {
-         return `${Math.round(elapsed / msPerMinute)} minutes ago`
+         return `${Math.round(elapsed / msPerMinute)} minutes ago`;
       } else if (elapsed < msPerDay) {
-         return `${Math.round(elapsed / msPerHour)} hours ago`
+         return `${Math.round(elapsed / msPerHour)} hours ago`;
       } else if (elapsed < msPerMonth) {
-         return `${Math.round(elapsed / msPerDay)} days ago`
+         return `${Math.round(elapsed / msPerDay)} days ago`;
       } else if (elapsed < msPerYear) {
-         return `${Math.round(elapsed / msPerMonth)} months ago`
+         return `${Math.round(elapsed / msPerMonth)} months ago`;
       } else {
-         return `${Math.round(elapsed / msPerYear)} years ago`
+         return `${Math.round(elapsed / msPerYear)} years ago`;
       }
    }
-}
+};
